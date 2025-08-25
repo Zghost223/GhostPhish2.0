@@ -1,0 +1,19 @@
+function extractUrls(text) {
+  const urlPattern = /https?:\/\/[^\s"']+/g;
+  return text.match(urlPattern) || [];
+}
+
+let emailBody = document.body.innerText;
+let urls = extractUrls(emailBody);
+
+urls.forEach(url => {
+  fetch('http://127.0.0.1:5000/scan_url', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `url=${encodeURIComponent(url)}`
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert(`Scan result for ${url}:\n${result}`);
+  });
+});

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Email Phishing Detector",
+  "version": "1.0",
+  "description": "Detect phishing and fraud automatically in emails.",
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*", "*://outlook.live.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "http://127.0.0.1:5000/"
+  ]
+}

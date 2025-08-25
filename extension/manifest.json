@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "GhostPhish Detector",
+  "version": "1.0",
+  "description": "Automatically detects and scans URLs and attachments for phishing threats",
+  "icons": {
+    "48": "icons/ghostphish-48.png"
+  },
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*",
+    "http://127.0.0.1:5000/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }],
+  "browser_action": {
+    "default_icon": "icons/ghostphish-48.png",
+    "default_title": "GhostPhish Detector"
+  }
+}
