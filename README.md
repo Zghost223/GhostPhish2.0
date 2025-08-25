@@ -23,7 +23,7 @@ GhostPhish is an intelligent security solution that combines a Flask-based backe
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/ghostphish.git
+git clone https://github.com/Zghost223/ghostphish.git
 cd ghostphish
 ```
 
